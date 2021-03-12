@@ -1,0 +1,10 @@
+
+
+<app-search-filter (search)="onSearch($event)"></app-search-filter>
+{{searchFilter | json }}
+{{searchFilterData | json }}
+{{ currentPage }}
+<button (click)="nextPage()"> Page Change </button>
+<div *ngFor="let customer of customerList">
+      <div>{{customer | json }}</div>
+</div>

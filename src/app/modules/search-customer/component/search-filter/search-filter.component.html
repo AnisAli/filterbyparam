@@ -1,0 +1,24 @@
+<form [formGroup]="filterFormGroup">
+  <div>
+    <label> Search Text </label>
+    <input type="text" formControlName="searchTerm" placeholder="searchTerm" />
+  </div>
+
+  <div>
+    <label>Active Only</label>
+    <input type="checkbox" formControlName="isActive" />
+  </div>
+  <div formGroupName="nested">
+    <label>Nested</label>
+    <input type="input" formControlName="a" placeholder="nested.a" />
+  </div>
+  <div>
+    <select formControlName="issues" multiple>
+      <label>Customer Type</label>
+      <option *ngFor="let item of items" [value]="item">{{ item }}</option>
+    </select>
+  </div>
+
+  <button (click)="search.emit(filterFormGroup.value)">Submit</button>
+
+</form>
